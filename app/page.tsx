@@ -1,11 +1,10 @@
 import { HeroBanner } from "@/components/homepage/hero-banner";
 import { FeaturedCollections } from "@/components/homepage/featured-collections";
-import { TrendingProducts } from "@/components/homepage/trending-products";
-import { EditorialBanner } from "@/components/homepage/editorial-banner";
-import { DealsOfTheDay } from "@/components/homepage/deals-of-the-day";
-import { CategoryCarousel } from "@/components/homepage/category-carousel";
+import { NewArrivals } from "@/components/homepage/new-arrivals";
+import { FloatingPromoCards } from "@/components/homepage/floating-promo-cards";
 import { BestSellers } from "@/components/homepage/best-sellers";
-import { FeaturesRow } from "@/components/homepage/features-row";
+import { CategoryCarousel } from "@/components/homepage/category-carousel";
+import { LifestyleBanner } from "@/components/homepage/lifestyle-banner";
 import { CustomerReviews } from "@/components/homepage/customer-reviews";
 import { Newsletter } from "@/components/homepage/newsletter";
 
@@ -14,12 +13,11 @@ export default function HomePage() {
     <>
       <HeroBanner />
       <FeaturedCollections />
-      <TrendingProducts />
-      <EditorialBanner />
-      <DealsOfTheDay />
-      <CategoryCarousel />
+      <NewArrivals />
+      <FloatingPromoCards />
       <BestSellers />
-      <FeaturesRow />
+      <CategoryCarousel />
+      <LifestyleBanner />
       <CustomerReviews />
       <Newsletter />
     </>

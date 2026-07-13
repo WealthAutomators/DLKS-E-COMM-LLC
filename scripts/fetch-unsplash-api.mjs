@@ -1,6 +1,6 @@
 /**
  * Fetches relevant product/category imagery from the Unsplash API for
- * VETX INDUSTRIES LLC and saves them into /public.
+ * DLKS E-COMM LLC and saves them into /public.
  *
  * Only Unsplash API *search* calls count against the hourly rate limit
  * (50/hr on a demo key). Downloading the resulting image bytes from the

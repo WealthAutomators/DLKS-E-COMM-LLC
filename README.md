@@ -1,5 +1,5 @@
-# VETX INDUSTRIES LLC
+# DLKS E-COMM LLC
 
-Next.js ecommerce storefront for **VETX INDUSTRIES LLC**.
+Next.js ecommerce storefront for **DLKS E-COMM LLC**.
 
-VETX INDUSTRIES LLC — *Innovation For Everyday Living.* — is a modern technology lifestyle marketplace for electronics, home essentials, beauty, fashion, and more. Brand assets, colors, copy, and product data are data-driven, so the storefront can be re-themed without rewriting the ecommerce engine.
+DLKS E-COMM LLC — *Premium Shopping. Seamlessly Delivered.* — is a modern boutique marketplace for electronics, home essentials, beauty, fashion, and more. Brand assets, colors, copy, and product data are data-driven, so the storefront can be re-themed without rewriting the ecommerce engine.

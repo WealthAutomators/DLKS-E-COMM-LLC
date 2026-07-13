@@ -58,7 +58,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="rounded-lg border border-border bg-white p-6 md:p-8">
+          <div className="glass-panel rounded-3xl p-6 md:p-8">
             <h2 className="text-xl font-semibold">Send a Message</h2>
 
             {submitted ? (

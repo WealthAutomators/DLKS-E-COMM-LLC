@@ -31,8 +31,8 @@ export function BestSellers() {
               className={cn(
                 "rounded-xl px-5 py-2 text-sm font-medium transition-colors",
                 activeTab === tab.slug
-                  ? "bg-primary text-white"
-                  : "bg-muted text-muted-foreground hover:bg-secondary hover:text-white"
+                  ? "bg-primary text-white shadow-md shadow-primary/20"
+                  : "glass-panel text-foreground hover:bg-primary hover:text-white"
               )}
             >
               {tab.label}

@@ -15,7 +15,7 @@ export function FeaturesRow() {
     <section className="py-24 md:py-32">
       <Container>
         <SectionHeading
-          title="Why Shop Vetx"
+          title="Why Shop DLKS"
           subtitle="A marketplace built for speed, security, and premium everyday products."
           centered
         />

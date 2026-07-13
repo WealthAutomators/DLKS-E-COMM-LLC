@@ -46,7 +46,7 @@ export const ProductCard = memo(function ProductCard({ product, className }: Pro
         viewport={{ once: true }}
         transition={{ duration: 0.4 }}
       >
-        <div className="relative aspect-[4/5] overflow-hidden rounded-[6px] bg-muted">
+        <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-muted shadow-sm shadow-primary/5">
           <Link href={`/product/${product.slug}`} className="block h-full w-full">
             <Image
               src={product.images[0]}

@@ -1,5 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180" fill="none">
-  <rect width="180" height="180" rx="40" fill="#0F172A"/>
-  <path d="M46 48 L90 138 L134 48" stroke="#2563EB" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <path d="M90 138 L90 116" stroke="#22D3EE" stroke-width="8" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="appleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4338CA"/>
+      <stop offset="100%" stop-color="#9333EA"/>
+    </linearGradient>
+  </defs>
+  <rect width="180" height="180" rx="40" fill="url(#appleGrad)"/>
+  <path
+    d="M48 42 H90 C124 42 146 64 146 96 C146 128 124 150 90 150 H48 V42 Z M68 62 V130 H88 C110 130 124 114 124 96 C124 78 110 62 88 62 H68 Z"
+    fill="#FFFFFF"
+  />
+  <circle cx="138" cy="48" r="12" fill="#06B6D4"/>
 </svg>

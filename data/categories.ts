@@ -17,7 +17,7 @@ export const categories: Category[] = [
   {
     id: "2",
     slug: "home-kitchen",
-    name: "Home & Kitchen",
+    name: "Home",
     image: "/categories/home-kitchen.jpg",
     description: "Appliances and tools to make home life easier.",
     productCount: countFor("home-kitchen"),
@@ -41,7 +41,7 @@ export const categories: Category[] = [
   {
     id: "5",
     slug: "pet-supplies",
-    name: "Pet Supplies",
+    name: "Pet",
     image: "/categories/pet-supplies.jpg",
     description: "Comfort and care products for your pets.",
     productCount: countFor("pet-supplies"),
@@ -97,7 +97,7 @@ export const categories: Category[] = [
   {
     id: "12",
     slug: "health-wellness",
-    name: "Health & Wellness",
+    name: "Health",
     image: "/categories/health-wellness.jpg",
     description: "Products to support your wellness routine.",
     productCount: countFor("health-wellness"),

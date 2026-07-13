@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/navbar/site-header";
 import { Footer } from "@/components/footer/footer";
@@ -11,12 +11,12 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta",
   subsets: ["latin"],
 });
 
-const siteUrl = "https://vetxindustriesllc.com";
+const siteUrl = "https://dlksecommllc.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -69,7 +69,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} h-full antialiased`}>
+    <html lang="en" className={`${inter.variable} ${plusJakarta.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col bg-background text-[16px] md:text-[17px]">
         <script
           type="application/ld+json"

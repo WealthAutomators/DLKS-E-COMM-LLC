@@ -15,11 +15,16 @@ const PUBLIC = path.join(ROOT, "public");
 
 function loadEnvLocal() {
   if (process.env.UNSPLASH_ACCESS_KEY) return;
-  const envPath = path.join(ROOT, ".env.local");
-  if (!fs.existsSync(envPath)) return;
-  for (const line of fs.readFileSync(envPath, "utf8").split("\n")) {
-    const match = line.match(/^UNSPLASH_ACCESS_KEY=(.+)$/);
-    if (match) process.env.UNSPLASH_ACCESS_KEY = match[1].trim();
+  for (const name of [".env.unsplash", ".env.local"]) {
+    const envPath = path.join(ROOT, name);
+    if (!fs.existsSync(envPath)) continue;
+    for (const line of fs.readFileSync(envPath, "utf8").split("\n")) {
+      const match = line.match(/^UNSPLASH_ACCESS_KEY=(.+)$/);
+      if (match) {
+        process.env.UNSPLASH_ACCESS_KEY = match[1].trim();
+        return;
+      }
+    }
   }
 }
 
@@ -27,30 +32,34 @@ function loadEnvLocal() {
 const SEARCH_QUERIES = {
   "wireless-earbuds": "wireless earbuds product",
   "bluetooth-speaker": "portable bluetooth speaker",
-  "smart-power-strip": "smart power strip surge protector",
+  "noise-cancelling-headphones": "noise cancelling over ear headphones",
+  "ceramic-pour-over-set": "ceramic pour over coffee dripper",
   "electric-kettle": "electric glass kettle",
   "air-fryer": "digital air fryer kitchen",
-  "coffee-grinder": "burr coffee grinder",
+  "silk-pillowcase-duo": "silk pillowcase luxury bedding",
+  "modular-desk-organizer": "aluminum desk organizer minimal",
   "bath-towel-set": "luxury bath towel set",
-  "shower-caddy-organizer": "shower caddy organizer",
   "kids-learning-tablet": "kids learning tablet",
-  "stem-robot-kit": "STEM robot building kit toy",
+  "compact-espresso-maker": "compact espresso machine countertop",
   "dog-bed": "orthopedic dog bed",
-  "pet-food-storage": "pet food storage container",
+  "linen-duvet-cover": "linen duvet cover bedroom",
   "vitamin-c-serum-set": "vitamin c skincare serum",
-  "hair-care-bundle": "shampoo conditioner hair care",
+  "matte-cookware-set": "matte nonstick cookware set",
   "yoga-mat": "yoga mat fitness",
-  "resistance-bands-set": "resistance bands exercise",
-  "standing-desk-lamp": "LED desk lamp office",
-  "ergonomic-mouse-pad": "ergonomic mouse pad wrist rest",
+  "travel-weekender-bag": "travel weekender bag nylon",
+  "fitness-tracker-band": "fitness tracker smartwatch band",
+  "smart-body-scale": "smart body composition scale glass",
+  "aluminum-laptop-stand": "aluminum laptop stand desk",
   "leather-wallet": "leather wallet mens",
-  "sunglasses-classic": "polarized sunglasses",
+  "ambient-desk-diffuser": "essential oil diffuser desk",
+  "aquascape-desk-garden": "desktop aquascape plant terrarium",
   "baby-monitor": "video baby monitor",
-  "soft-plush-blanket": "soft baby blanket plush",
-  "building-blocks-set": "building blocks toys children",
-  "board-game-family": "family board game",
   "foam-roller": "foam roller fitness",
-  "essential-oil-diffuser": "essential oil diffuser",
+  "robot-vacuum-mini": "robot vacuum cleaner modern",
+  "gaming-headset": "wireless gaming headset rgb",
+  "rgb-gaming-keyboard": "mechanical gaming keyboard rgb",
+  "magnetic-tile-builders": "magnetic building tiles kids",
+  "bamboo-bath-mat": "bamboo bath mat bathroom",
 };
 
 function parseProducts() {

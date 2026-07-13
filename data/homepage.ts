@@ -8,13 +8,13 @@ export const heroSlides: HeroSlide[] = [
   {
     id: "1",
     image: "/hero/hero-1.jpg",
-    headline: "The Future Of Everyday Shopping.",
+    headline: "The New Standard For Everyday Shopping.",
     description:
-      "Premium electronics, home essentials, lifestyle products and everyday favorites curated into one seamless shopping experience.",
-    ctaText: "Explore Products",
+      "Discover premium products across every category with a faster, cleaner and more enjoyable shopping experience.",
+    ctaText: "Shop Collection",
     ctaLink: "/shop",
-    secondaryCtaText: "Latest Deals",
-    secondaryCtaLink: "/shop?sort=sale",
+    secondaryCtaText: "Discover New Arrivals",
+    secondaryCtaLink: "/new-arrivals",
   },
 ];
 
@@ -55,63 +55,90 @@ export const featuredCollections = [
   },
   {
     id: "2",
-    title: "Home Essentials",
+    title: "Home Refresh",
     subtitle: "Refined tools for modern spaces",
     href: "/categories/home-kitchen",
     image: "/categories/home-kitchen.jpg",
   },
   {
     id: "3",
-    title: "Work & Office",
-    subtitle: "Gear that keeps your workspace sharp",
-    href: "/categories/office-supplies",
-    image: "/categories/office-supplies.jpg",
+    title: "Daily Essentials",
+    subtitle: "Beauty, wellness, and everyday rituals",
+    href: "/categories/beauty",
+    image: "/categories/beauty.jpg",
   },
   {
     id: "4",
-    title: "Everyday Favorites",
-    subtitle: "Lifestyle picks for daily rituals",
-    href: "/categories/fashion-accessories",
-    image: "/categories/fashion-accessories.jpg",
+    title: "Work & Play",
+    subtitle: "Gear for desks, workouts, and downtime",
+    href: "/categories/office-supplies",
+    image: "/categories/office-supplies.jpg",
+  },
+];
+
+export const floatingPromos = [
+  {
+    id: "1",
+    title: "Weekend Deals",
+    subtitle: "Limited-time savings on bestsellers and new drops.",
+    href: "/shop?sort=sale",
+    image: "/banners/promo-weekend.jpg",
+    cta: "Shop Deals",
+  },
+  {
+    id: "2",
+    title: "Editor's Picks",
+    subtitle: "Curated favorites chosen for quality and design.",
+    href: "/shop?sort=featured",
+    image: "/banners/promo-editors.jpg",
+    cta: "View Picks",
+  },
+  {
+    id: "3",
+    title: "Trending Now",
+    subtitle: "What shoppers are loving this season.",
+    href: "/best-sellers",
+    image: "/banners/promo-trending.jpg",
+    cta: "See Trends",
   },
 ];
 
 export const editorialBanner = {
-  title: "Shopping Powered By Innovation.",
+  title: "Designed Around Modern Living.",
   description:
-    "Discover products carefully selected to simplify work, home and everyday life.",
-  ctaText: "Browse Collection",
-  ctaLink: "/categories",
-  image: "/banners/featured.jpg",
+    "Explore products that simplify work, home and everyday life.",
+  ctaText: "Browse Products",
+  ctaLink: "/shop",
+  image: "/banners/lifestyle.jpg",
 };
 
 export const dealsEndTime = new Date(Date.now() + 1000 * 60 * 60 * 18).toISOString();
 
 export const homepageDealsSlugs = [
-  "magnetic-wireless-charger",
-  "portable-ssd-drive",
+  "noise-cancelling-headphones",
+  "compact-espresso-maker",
+  "smart-body-scale",
   "air-fryer",
-  "fitness-tracker-band",
   "gaming-headset",
-  "ultra-thin-power-bank",
+  "silk-pillowcase-duo",
 ] as const;
 
 export const homepageTrendingSlugs = [
-  "magnetic-wireless-charger",
-  "led-light-strip-kit",
+  "noise-cancelling-headphones",
+  "modular-desk-organizer",
   "aluminum-laptop-stand",
-  "robot-vacuum-mini",
-  "portable-blender",
+  "linen-duvet-cover",
+  "ceramic-pour-over-set",
   "yoga-mat",
   "bluetooth-speaker",
-  "cold-brew-maker",
+  "ambient-desk-diffuser",
 ] as const;
 
 export const homepageBestsellerSlugs = [
   "wireless-earbuds",
-  "robot-vacuum-mini",
+  "matte-cookware-set",
   "electric-kettle",
-  "fitness-tracker-band",
+  "travel-weekender-bag",
   "gaming-headset",
   "bath-towel-set",
   "aluminum-laptop-stand",
@@ -119,32 +146,34 @@ export const homepageBestsellerSlugs = [
 ] as const;
 
 export const homepageFeaturedSlugs = [
-  "magnetic-wireless-charger",
-  "robot-vacuum-mini",
-  "portable-ssd-drive",
-  "aluminum-laptop-stand",
-  "led-light-strip-kit",
-  "fitness-tracker-band",
-  "cold-brew-maker",
+  "noise-cancelling-headphones",
+  "ceramic-pour-over-set",
+  "silk-pillowcase-duo",
+  "modular-desk-organizer",
+  "compact-espresso-maker",
+  "linen-duvet-cover",
+  "smart-body-scale",
   "wireless-earbuds",
-  "ultra-thin-power-bank",
+  "travel-weekender-bag",
   "yoga-mat",
 ] as const;
 
 export const homepageNewArrivalSlugs = [
-  "magnetic-wireless-charger",
-  "portable-ssd-drive",
-  "robot-vacuum-mini",
-  "fitness-tracker-band",
-  "led-light-strip-kit",
-  "cold-brew-maker",
+  "noise-cancelling-headphones",
+  "ceramic-pour-over-set",
+  "silk-pillowcase-duo",
+  "modular-desk-organizer",
+  "compact-espresso-maker",
+  "ambient-desk-diffuser",
+  "linen-duvet-cover",
+  "smart-body-scale",
 ] as const;
 
 export const promotionalBanner: PromoBanner = {
   id: "1",
-  title: "Innovation Without Friction",
+  title: "Premium Without Friction",
   description:
-    "Premium materials. Thoughtful design. Products chosen to streamline everyday living.",
+    "Thoughtful design. Premium materials. Products chosen to elevate everyday living.",
   buttonText: "Browse Products",
   buttonLink: "/shop",
   image: "/banners/featured.jpg",
@@ -161,17 +190,17 @@ export const featuredCollection = {
 export const bestSellerTabs = [
   { label: "All", slug: "all" },
   { label: "Electronics", slug: "electronics" },
-  { label: "Home & Kitchen", slug: "home-kitchen" },
+  { label: "Home", slug: "home-kitchen" },
   { label: "Beauty", slug: "beauty" },
   { label: "Sports", slug: "sports-outdoors" },
 ];
 
 export const newsletter = {
-  title: "Stay Ahead.",
+  title: "Join Thousands Of Happy Customers",
   description:
-    "Receive exclusive launches, seasonal deals and new arrivals before everyone else.",
+    "Get exclusive launches, weekly deals and seasonal collections delivered directly to your inbox.",
   placeholder: "Enter your email address",
-  buttonText: "Join Now",
+  buttonText: "Subscribe",
 };
 
 export const sortOptions = [
@@ -185,12 +214,12 @@ export const sortOptions = [
 export const aboutSection = {
   title: "Built For Modern Life.",
   description:
-    "VETX INDUSTRIES LLC exists for people who want technology and everyday essentials to work together. We curate electronics, home tools, beauty, fashion, and lifestyle pieces that balance performance with simplicity.",
+    "DLKS E-COMM LLC exists for people who want premium products and everyday essentials to work together. We curate electronics, home tools, beauty, fashion, and lifestyle pieces that balance performance with elegance.",
   checklist: [
-    "Technology-forward across every category",
+    "Premium curation across every category",
     "Quality-first selection over endless inventory",
-    "Products designed for speed, clarity, and comfort",
-    "A shopping experience built around innovation",
+    "Products designed for clarity, comfort, and style",
+    "A shopping experience built around seamless delivery",
   ],
   buttonText: "Shop Now",
   buttonLink: "/shop",
