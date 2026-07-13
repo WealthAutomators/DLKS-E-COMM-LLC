@@ -26,15 +26,15 @@ export default function AboutPage() {
           </div>
           <PageSection title="Our Story">
             <p>
-              CASTALDO ENTERPRISES LLC was founded with a simple mission: elevate everyday living
-              through thoughtfully curated products across every category in one refined
-              marketplace. From electronics and home essentials to beauty, fashion, and lifestyle
-              pieces — we select items that balance form, function, and lasting quality.
+              {company.name} was founded with a simple mission: bring innovation into everyday
+              living through a technology-forward marketplace. From premium electronics and smart
+              home tools to beauty, fashion, and lifestyle essentials — we select products that
+              balance performance, design, and lasting quality.
             </p>
             <p className="mt-4">
-              Based in Howell, New Jersey, we partner with trusted suppliers to offer premium
+              Based in West Jordan, Utah, we partner with trusted suppliers to offer premium
               products without compromise. Every piece in our catalog is chosen with intention, and
-              our team is dedicated to making your shopping experience calm, clear, and considered
+              our team is dedicated to making your shopping experience fast, modern, and seamless
               from browsing to checkout.
             </p>
           </PageSection>

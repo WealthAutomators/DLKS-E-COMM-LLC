@@ -24,7 +24,7 @@ export function SiteHeader() {
   const { wishlist } = useWishlist();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -41,84 +41,43 @@ export function SiteHeader() {
     };
   }, [mobileOpen, searchOpen]);
 
-  const solid = !isHome || scrolled || mobileOpen;
+  const elevated = scrolled || mobileOpen || !isHome;
 
   return (
     <>
-      <header
-        className={cn(
-          "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-          solid
-            ? "border-b border-border bg-white/95 shadow-sm backdrop-blur-md"
-            : "bg-transparent"
-        )}
-      >
-        <Container>
-          <div className="relative flex h-[72px] items-center lg:h-20">
-            {/* Left nav — desktop */}
-            <nav className="hidden flex-1 items-center gap-8 lg:flex">
-              {leftNavLinks.map((link) => (
-                <Link
-                  key={link.href + link.label}
-                  href={link.href}
-                  className={cn(
-                    "text-[13px] font-medium uppercase tracking-[0.14em] transition-colors",
-                    solid
-                      ? "text-foreground hover:text-secondary"
-                      : "text-white/90 hover:text-white"
-                  )}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
+      <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-4 sm:pt-4 md:px-6">
+        <Container className="!px-0">
+          <div
+            className={cn(
+              "overflow-hidden rounded-2xl border transition-all duration-300",
+              elevated
+                ? "border-border/80 bg-white/85 shadow-lg shadow-primary/5 backdrop-blur-xl"
+                : "border-white/40 bg-white/45 shadow-md shadow-primary/5 backdrop-blur-xl",
+              mobileOpen && "rounded-b-none sm:rounded-2xl"
+            )}
+          >
+            <div className="relative flex h-14 items-center px-3 sm:h-16 sm:px-5 lg:px-6">
+              {/* Logo */}
+              <Link href="/" className="relative z-10 shrink-0">
+                <Image
+                  src="/logo/logo.svg"
+                  alt={company.name}
+                  width={220}
+                  height={40}
+                  priority
+                  className="h-7 w-auto sm:h-8"
+                />
+              </Link>
 
-            {/* Mobile menu toggle */}
-            <div className="flex flex-1 items-center lg:hidden">
-              <Button
-                variant="ghost"
-                size="icon"
-                className={cn(
-                  "h-10 w-10",
-                  solid ? "text-foreground" : "text-white hover:bg-white/10 hover:text-white"
-                )}
-                onClick={() => setMobileOpen((o) => !o)}
-                aria-label={mobileOpen ? "Close menu" : "Open menu"}
-              >
-                {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-              </Button>
-            </div>
-
-            {/* Centered logo */}
-            <Link
-              href="/"
-              className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2"
-            >
-              <Image
-                src="/logo/logo.svg"
-                alt={company.name}
-                width={280}
-                height={48}
-                priority
-                className={cn(
-                  "h-8 w-auto transition-[filter] duration-300 sm:h-9",
-                  !solid && "brightness-0 invert"
-                )}
-              />
-            </Link>
-
-            {/* Right: nav + icons */}
-            <div className="flex flex-1 items-center justify-end gap-6">
-              <nav className="hidden items-center gap-8 lg:flex">
-                {rightNavLinks.map((link) => (
+              {/* Desktop menu */}
+              <nav className="absolute inset-x-0 hidden items-center justify-center gap-1 lg:flex">
+                {[...leftNavLinks, ...rightNavLinks].map((link) => (
                   <Link
                     key={link.href + link.label}
                     href={link.href}
                     className={cn(
-                      "text-[13px] font-medium uppercase tracking-[0.14em] transition-colors",
-                      solid
-                        ? "text-foreground hover:text-secondary"
-                        : "text-white/90 hover:text-white"
+                      "rounded-lg px-3 py-2 text-[13px] font-medium tracking-wide text-foreground/80 transition-colors hover:bg-primary/5 hover:text-primary",
+                      pathname === link.href && "bg-primary/5 text-primary"
                     )}
                   >
                     {link.label}
@@ -126,14 +85,12 @@ export function SiteHeader() {
                 ))}
               </nav>
 
-              <div className="flex items-center gap-0.5">
+              {/* Icons */}
+              <div className="ml-auto flex items-center gap-0.5">
                 <Button
                   variant="ghost"
                   size="icon"
-                  className={cn(
-                    "h-9 w-9",
-                    solid ? "text-foreground" : "text-white hover:bg-white/10 hover:text-white"
-                  )}
+                  className="h-9 w-9 text-foreground"
                   onClick={() => setSearchOpen(true)}
                   aria-label="Search"
                 >
@@ -144,10 +101,7 @@ export function SiteHeader() {
                   variant="ghost"
                   size="icon"
                   asChild
-                  className={cn(
-                    "relative h-9 w-9",
-                    solid ? "text-foreground" : "text-white hover:bg-white/10 hover:text-white"
-                  )}
+                  className="relative h-9 w-9 text-foreground"
                 >
                   <Link href="/wishlist" aria-label="Wishlist">
                     <Heart className="h-[18px] w-[18px]" />
@@ -163,10 +117,7 @@ export function SiteHeader() {
                   variant="ghost"
                   size="icon"
                   asChild
-                  className={cn(
-                    "hidden h-9 w-9 sm:inline-flex",
-                    solid ? "text-foreground" : "text-white hover:bg-white/10 hover:text-white"
-                  )}
+                  className="hidden h-9 w-9 text-foreground sm:inline-flex"
                 >
                   <Link href="/profile" aria-label="Account">
                     <User className="h-[18px] w-[18px]" />
@@ -177,10 +128,7 @@ export function SiteHeader() {
                   variant="ghost"
                   size="icon"
                   asChild
-                  className={cn(
-                    "relative h-9 w-9",
-                    solid ? "text-foreground" : "text-white hover:bg-white/10 hover:text-white"
-                  )}
+                  className="relative h-9 w-9 text-foreground"
                 >
                   <Link href="/cart" aria-label="Cart">
                     <ShoppingBag className="h-[18px] w-[18px]" />
@@ -191,37 +139,45 @@ export function SiteHeader() {
                     )}
                   </Link>
                 </Button>
+
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="h-9 w-9 text-foreground lg:hidden"
+                  onClick={() => setMobileOpen((o) => !o)}
+                  aria-label={mobileOpen ? "Close menu" : "Open menu"}
+                >
+                  {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                </Button>
               </div>
             </div>
+
+            {/* Mobile drawer */}
+            {mobileOpen && (
+              <div className="border-t border-border/70 bg-white/95 px-4 py-5 backdrop-blur-xl lg:hidden">
+                <ul className="space-y-1">
+                  {navigationLinks.map((link) => (
+                    <li key={link.href + link.label}>
+                      <Link
+                        href={link.href}
+                        className="block rounded-lg px-3 py-3 text-sm font-medium text-foreground transition-colors hover:bg-primary/5 hover:text-secondary"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </Container>
-
-        {/* Mobile drawer */}
-        {mobileOpen && (
-          <div className="border-t border-border bg-white lg:hidden">
-            <Container className="py-6">
-              <ul className="space-y-1">
-                {navigationLinks.map((link) => (
-                  <li key={link.href + link.label}>
-                    <Link
-                      href={link.href}
-                      className="block px-1 py-3 text-sm font-medium uppercase tracking-[0.12em] text-foreground transition-colors hover:text-secondary"
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </Container>
-          </div>
-        )}
       </header>
 
       <FullscreenSearch open={searchOpen} onClose={() => setSearchOpen(false)} />
 
-      {/* Spacer so interior pages clear the fixed header */}
-      {!isHome && <div className="h-[72px] lg:h-20" aria-hidden />}
+      {/* Spacer so interior pages clear the floating header */}
+      {!isHome && <div className="h-[76px] sm:h-[88px]" aria-hidden />}
     </>
   );
 }

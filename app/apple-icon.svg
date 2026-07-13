@@ -1,14 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180" fill="none">
-  <rect width="180" height="180" rx="40" fill="#18181B"/>
-  <text
-    x="90"
-    y="98"
-    text-anchor="middle"
-    dominant-baseline="middle"
-    fill="#C08457"
-    font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
-    font-size="58"
-    font-weight="600"
-    letter-spacing="2"
-  >CE</text>
+  <rect width="180" height="180" rx="40" fill="#0F172A"/>
+  <path d="M46 48 L90 138 L134 48" stroke="#2563EB" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M90 138 L90 116" stroke="#22D3EE" stroke-width="8" stroke-linecap="round"/>
 </svg>

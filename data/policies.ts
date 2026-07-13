@@ -48,7 +48,7 @@ export const faqItems = [
   },
   {
     question: "How can I contact customer support?",
-    answer: `Our support team is available Monday through Friday, 9am–6pm EST. Email us at ${company.email} or use the contact form on our website. We typically respond within one business day.`,
+    answer: `Our support team is available ${company.hours}. Email us at ${company.email} or use the contact form on our website. We typically respond within one business day.`,
   },
 ];
 
@@ -155,7 +155,7 @@ export const refundPolicy = {
     },
     {
       title: "Contact Us",
-      content: `Questions about refunds? Reach our team at ${company.email} Monday through Friday, 9am–6pm EST.`,
+      content: `Questions about refunds? Reach our team at ${company.email} (${company.hours}).`,
     },
   ],
 };
@@ -196,7 +196,7 @@ export const privacyPolicy = {
       content:
         "You may request access to, correction of, or deletion of your personal data at any time by contacting us at " +
         company.email +
-        ". New Jersey residents have additional rights under applicable state privacy laws.",
+        ". Utah residents have additional rights under applicable state privacy laws.",
     },
     {
       title: "Contact",
@@ -234,7 +234,7 @@ export const termsPolicy = {
     {
       title: "Governing Law",
       content:
-        "These terms are governed by the laws of the State of New Jersey, United States. Any disputes shall be resolved in the courts of Howell, New Jersey.",
+        "These terms are governed by the laws of the State of Utah, United States. Any disputes shall be resolved in the courts of Salt Lake County, Utah.",
     },
   ],
 };

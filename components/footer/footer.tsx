@@ -8,27 +8,27 @@ import { Separator } from "@/components/ui/separator";
 export function Footer() {
   return (
     <footer className="border-t border-border bg-white">
-      <Container className="py-20 md:py-24">
-        <div className="mb-16">
+      <Container className="py-16 md:py-20">
+        <div className="mb-12">
           <Image
             src="/logo/logo.svg"
             alt={company.name}
-            width={280}
-            height={48}
-            className="h-10 w-auto"
+            width={240}
+            height={40}
+            className="h-9 w-auto"
           />
-          <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground md:text-base">
+          <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
             {company.tagline}
           </p>
         </div>
 
-        <div className="grid gap-12 sm:grid-cols-3 lg:gap-20">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
           <div>
-            <h3 className="mb-6 text-[11px] font-medium uppercase tracking-[0.2em] text-foreground">
-              Shop
+            <h3 className="mb-5 text-[11px] font-medium uppercase tracking-[0.2em] text-foreground">
+              Products
             </h3>
-            <ul className="space-y-3.5">
-              {footerLinks.shop.map((link) => (
+            <ul className="space-y-3">
+              {footerLinks.products.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
@@ -42,10 +42,28 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-6 text-[11px] font-medium uppercase tracking-[0.2em] text-foreground">
+            <h3 className="mb-5 text-[11px] font-medium uppercase tracking-[0.2em] text-foreground">
+              Company
+            </h3>
+            <ul className="space-y-3">
+              {footerLinks.company.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted-foreground transition-colors hover:text-secondary"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="mb-5 text-[11px] font-medium uppercase tracking-[0.2em] text-foreground">
               Support
             </h3>
-            <ul className="space-y-3.5">
+            <ul className="space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.label}>
                   <Link
@@ -60,10 +78,10 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-6 text-[11px] font-medium uppercase tracking-[0.2em] text-foreground">
+            <h3 className="mb-5 text-[11px] font-medium uppercase tracking-[0.2em] text-foreground">
               Contact
             </h3>
-            <ul className="space-y-3.5 text-sm text-muted-foreground">
+            <ul className="space-y-3 text-sm text-muted-foreground">
               {footerLinks.contact.map((link) => (
                 <li key={link.label}>
                   <Link
@@ -77,7 +95,7 @@ export function Footer() {
               <li className="pt-2">
                 {company.address.street}
                 <br />
-                {company.address.city}, {company.address.state}
+                {company.address.city}, {company.address.state} {company.address.zip}
               </li>
               <li>
                 <a
@@ -94,7 +112,7 @@ export function Footer() {
 
       <Separator />
 
-      <Container className="flex flex-col items-center justify-between gap-4 py-8 sm:flex-row">
+      <Container className="flex flex-col items-center justify-between gap-4 py-7 sm:flex-row">
         <p className="text-sm text-muted-foreground">{company.copyright}</p>
         <div className="flex items-center gap-2">
           {paymentMethods.map((method) => (

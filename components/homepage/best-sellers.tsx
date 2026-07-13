@@ -19,7 +19,7 @@ export function BestSellers() {
       : bestsellers.filter((p) => p.categorySlug === activeTab).slice(0, 4);
 
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-24 md:py-32">
       <Container>
         <SectionHeading title="Best Sellers" viewMoreLink="/best-sellers" />
 
@@ -29,10 +29,10 @@ export function BestSellers() {
               key={tab.slug}
               onClick={() => setActiveTab(tab.slug)}
               className={cn(
-                "rounded-[6px] px-5 py-2 text-sm font-medium transition-colors",
+                "rounded-xl px-5 py-2 text-sm font-medium transition-colors",
                 activeTab === tab.slug
                   ? "bg-primary text-white"
-                  : "bg-muted text-muted-foreground hover:text-foreground"
+                  : "bg-muted text-muted-foreground hover:bg-secondary hover:text-white"
               )}
             >
               {tab.label}

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { editorialBanner } from "@/data/homepage";
@@ -9,40 +8,35 @@ import { Button } from "@/components/ui/button";
 
 export function EditorialBanner() {
   return (
-    <section className="relative py-0">
-      <div className="relative min-h-[420px] w-full overflow-hidden md:min-h-[520px]">
-        <Image
-          src={editorialBanner.image}
-          alt={editorialBanner.title}
-          fill
-          className="object-cover"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-black/45" />
-        <Container className="relative flex min-h-[420px] items-center md:min-h-[520px]">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-lg py-16"
+    <section className="relative overflow-hidden py-20 md:py-28">
+      <div className="absolute inset-0 bg-primary" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_15%_50%,rgba(37,99,235,0.45),transparent_55%),radial-gradient(ellipse_at_85%_30%,rgba(34,211,238,0.28),transparent_50%)]" />
+      <div className="pointer-events-none absolute -right-20 top-0 h-72 w-72 rounded-full bg-secondary/30 blur-3xl" />
+      <div className="pointer-events-none absolute -left-10 bottom-0 h-64 w-64 rounded-full bg-accent/20 blur-3xl" />
+
+      <Container className="relative">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mx-auto max-w-3xl text-center"
+        >
+          <h2 className="font-display text-3xl font-semibold tracking-tight text-white md:text-5xl">
+            {editorialBanner.title}
+          </h2>
+          <p className="mt-5 text-base leading-relaxed text-white/75 md:text-lg">
+            {editorialBanner.description}
+          </p>
+          <Button
+            asChild
+            size="lg"
+            className="mt-9 bg-white text-primary hover:bg-secondary hover:text-white"
           >
-            <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl lg:text-5xl">
-              {editorialBanner.title}
-            </h2>
-            <p className="mt-5 text-base leading-relaxed text-white/80 md:text-lg">
-              {editorialBanner.description}
-            </p>
-            <Button
-              asChild
-              size="lg"
-              className="mt-8 bg-white text-primary hover:bg-secondary hover:text-white"
-            >
-              <Link href={editorialBanner.ctaLink}>{editorialBanner.ctaText}</Link>
-            </Button>
-          </motion.div>
-        </Container>
-      </div>
+            <Link href={editorialBanner.ctaLink}>{editorialBanner.ctaText}</Link>
+          </Button>
+        </motion.div>
+      </Container>
     </section>
   );
 }

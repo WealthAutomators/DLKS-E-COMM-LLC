@@ -1,6 +1,6 @@
 /**
  * Fetches relevant product/category imagery from the Unsplash API for
- * VALUEBUY PARTNERS LLC and saves them into /public.
+ * VETX INDUSTRIES LLC and saves them into /public.
  *
  * Only Unsplash API *search* calls count against the hourly rate limit
  * (50/hr on a demo key). Downloading the resulting image bytes from the
@@ -34,34 +34,34 @@ let apiCalls = 0;
 const PRODUCT_QUERIES = {
   "wireless-earbuds": "wireless earbuds",
   "bluetooth-speaker": "portable bluetooth speaker",
-  "smart-power-strip": "power strip surge protector",
+  "magnetic-wireless-charger": "magsafe wireless charger phone",
+  "portable-ssd-drive": "portable ssd hard drive",
   "electric-kettle": "electric glass kettle",
   "air-fryer": "air fryer kitchen",
   "coffee-grinder": "coffee grinder",
+  "cold-brew-maker": "cold brew coffee maker glass",
   "bath-towel-set": "folded bath towels",
-  "shower-caddy-organizer": "bathroom shower organizer",
+  "bamboo-bath-mat": "bamboo bath mat bathroom",
   "kids-learning-tablet": "child using tablet",
-  "stem-robot-kit": "robot toy kit",
+  "led-light-strip-kit": "led light strip rgb desk",
   "dog-bed": "dog bed",
-  "pet-food-storage": "pet food container",
+  "smart-pet-feeder": "automatic pet feeder",
   "vitamin-c-serum-set": "skincare serum bottle",
-  "hair-care-bundle": "hair care shampoo bottles",
+  "portable-blender": "portable personal blender",
   "yoga-mat": "yoga mat",
   "resistance-bands-set": "resistance bands workout",
+  "fitness-tracker-band": "fitness tracker smartwatch band",
   "standing-desk-lamp": "desk lamp",
-  "ergonomic-mouse-pad": "desk mouse pad",
+  "aluminum-laptop-stand": "aluminum laptop stand desk",
   "leather-wallet": "leather wallet",
   "sunglasses-classic": "sunglasses",
+  "ultra-thin-power-bank": "slim power bank portable charger",
   "baby-monitor": "baby monitor camera",
-  "soft-plush-blanket": "soft baby blanket",
-  "building-blocks-set": "colorful building blocks",
-  "board-game-family": "board game",
+  "magnetic-tile-builders": "magnetic building tiles kids",
   "foam-roller": "foam roller fitness",
-  "essential-oil-diffuser": "essential oil diffuser",
+  "robot-vacuum-mini": "robot vacuum cleaner",
   "gaming-headset": "gaming headset",
-  "wireless-gaming-mouse": "gaming mouse",
   "rgb-gaming-keyboard": "mechanical rgb keyboard",
-  "controller-charging-dock": "game controller",
 };
 
 /** Search query per category slug. */
@@ -225,9 +225,9 @@ async function main() {
 
   // 3) Hero + banners (landscape) if budget remains.
   const wide = [
-    { file: "hero/hero-1.jpg", query: "happy family online shopping", width: 1800 },
-    { file: "banners/featured.jpg", query: "shopping bags sale", width: 1600 },
-    { file: "banners/about.jpg", query: "warehouse delivery boxes", width: 1600 },
+    { file: "hero/hero-1.jpg", query: "modern tech lifestyle shopping device", width: 1800 },
+    { file: "banners/featured.jpg", query: "futuristic technology workspace blue", width: 1600 },
+    { file: "banners/about.jpg", query: "modern warehouse logistics packaging", width: 1600 },
   ];
   for (const t of wide) {
     try {

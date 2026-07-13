@@ -11,7 +11,7 @@ export function TrendingProducts() {
   const products = getProductsBySlugs(homepageTrendingSlugs);
 
   return (
-    <section className="bg-muted/40 py-20 md:py-28">
+    <section className="bg-muted/40 py-24 md:py-32">
       <Container>
         <SectionHeading title="Trending Products" viewMoreLink="/shop" />
         <Carousel slidesToShow={4} className="px-8">

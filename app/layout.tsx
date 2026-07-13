@@ -1,17 +1,22 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/navbar/site-header";
 import { Footer } from "@/components/footer/footer";
 import { Providers } from "@/components/providers/Providers";
 import { company } from "@/data/company";
 
-const manrope = Manrope({
-  variable: "--font-manrope",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const siteUrl = "https://castaldoenterprisesllc.com";
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+});
+
+const siteUrl = "https://vetxindustriesllc.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -48,6 +53,7 @@ const organizationSchema = {
     streetAddress: company.address.street,
     addressLocality: company.address.city,
     addressRegion: company.address.state,
+    postalCode: company.address.zip,
     addressCountry: company.address.country,
   },
   sameAs: [
@@ -63,7 +69,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${manrope.variable} h-full antialiased`}>
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col bg-background text-[16px] md:text-[17px]">
         <script
           type="application/ld+json"
